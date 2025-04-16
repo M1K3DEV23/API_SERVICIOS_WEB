@@ -7,10 +7,8 @@ from fastapi.openapi.utils import get_openapi
 
 from app.core.config import settings
 from app.core.database import create_db_and_tables
-from app.modules.figuras_coleccion.routes import router as figuras_coleccion_router
-from app.modules.joyeria.routes import router as joyeria_router
 from app.modules.productos.routes import router as productos_router
-from app.modules.videojuegos.routes import router as videojuegos_router
+
 
 
 def lifespan(app: FastAPI):
@@ -45,21 +43,6 @@ app.add_middleware(
 app.include_router(
     productos_router, prefix=f"{settings.API_V1_STR}/productos", tags=["productos"]
 )
-app.include_router(
-    videojuegos_router,
-    prefix=f"{settings.API_V1_STR}/videojuegos",
-    tags=["videojuegos"],
-)
-app.include_router(
-    figuras_coleccion_router,
-    prefix=f"{settings.API_V1_STR}/figuras-coleccion",
-    tags=["figuras_coleccion"],
-)
-app.include_router(
-    joyeria_router,
-    prefix=f"{settings.API_V1_STR}/joyeria",
-    tags=["joyeria"],
-)
 
 
 # Personalizar la documentación OpenAPI
@@ -71,7 +54,7 @@ def custom_openapi():
     openapi_schema = get_openapi(
         title=f"{settings.PROJECT_NAME} API",
         version="1.0.0",
-        description="API REST para gestionar productos, videojuegos, figuras de colección y joyería de una tienda",
+        description="API REST para gestionar productos.",
         routes=app.routes,
     )
 
@@ -86,7 +69,7 @@ app.openapi = custom_openapi
 def root():
     """Ruta raíz de la API."""
     return {
-        "message": "Bienvenido a la API de Productos, Videojuegos, Figuras de Colección y Joyería",
+        "message": "Bienvenido a la API de Productos",
         "docs": "/docs",
         "redoc": "/redoc",
     }
