@@ -13,14 +13,12 @@ Bienvenido a **Servicios Web API**: una aplicación moderna desarrollada con Pyt
 
 ## 📦 Estructura del Proyecto
 
-```
+```text
 Servicios_web_API/
 ├── app/
 │   ├── core/
 │   ├── modules/
 │   │   ├── productos/
-│   │   ├── joyeria/
-│   │   └── videojuegos/
 │   └── main.py
 ├── sql_app.db
 └── README.md
@@ -88,8 +86,6 @@ Servicios_web_API/
 ## 🧩 Endpoints Principales
 
 - `/productos/` — Gestión de productos generales
-- `/joyeria/` — Gestión de productos de joyería
-- `/videojuegos/` — Gestión de videojuegos
 
 Cada módulo cuenta con endpoints para **crear, leer, actualizar y eliminar** (CRUD) registros.
 
@@ -109,9 +105,7 @@ curl -X POST "http://127.0.0.1:8000/productos/" -H "Content-Type: application/js
 
 ## 👨‍💻 Autor
 
-- Desarrollado por: [Tu Nombre]
-- Contacto: [tu.email@dominio.com]
+- Desarrollado por: [Miguel Angel Rios Yañez]
+- Contacto: [mikery2310@outlook.com]
 
 ---
-
-¡Contribuciones y sugerencias son bienvenidas! ⭐
